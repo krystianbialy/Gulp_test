@@ -1,0 +1,19 @@
+{
+  "name": "gulp_test",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "K.Biały",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "run-sequence": "^2.2.1"
+  },
+  "dependencies": {
+    "gulp-sass": "^4.0.2"
+  }
+}
