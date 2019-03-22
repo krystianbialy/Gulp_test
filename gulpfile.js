@@ -2,6 +2,7 @@
 const gulp = require('gulp');
 const browserSync = require("browser-sync").create();
 const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
 
 //===== TASKS =====
 gulp.task('serve', function() {
@@ -14,9 +15,11 @@ gulp.task('serve', function() {
 
 gulp.task('sass', function() {
   return gulp.src('sass/*.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'compressed'
     }))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('css'))
     .pipe(browserSync.stream());
 });
