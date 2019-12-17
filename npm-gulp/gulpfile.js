@@ -1,20 +1,18 @@
-//===== VARIABLES =====
 const gulp = require('gulp');
-const browserSync = require("browser-sync").create();
+const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 
-//===== TASKS =====
 gulp.task('serve', function() {
   browserSync.init({
-    server: "./"
+    server: './'
   });
-  gulp.watch('sass/*.scss', gulp.series('sass'));
-  gulp.watch("*.html").on('change', browserSync.reload);
+  gulp.watch('lorem/*.scss', gulp.series('sass'));
+  gulp.watch('*.html').on('change', browserSync.reload);
 });
 
 gulp.task('sass', function() {
-  return gulp.src('sass/*.scss')
+  return gulp.src('lorem/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'compressed'
