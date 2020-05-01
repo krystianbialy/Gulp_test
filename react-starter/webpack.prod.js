@@ -8,10 +8,10 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[contentHash].js'
+    filename: '[name].[contentHash].js',
   },
   optimization: {
-    minimizer: [new TerserPlugin()]
+    minimizer: [new TerserPlugin()],
   },
   module: {
     rules: [
@@ -19,9 +19,9 @@ module.exports = {
         test: /\.html$/,
         use: [
           {
-            loader: 'html-loader'
-          }
-        ]
+            loader: 'html-loader',
+          },
+        ],
       },
       {
         test: /\.(png|svg|jpe?g|gif)$/,
@@ -30,10 +30,10 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'images'
-            }
-          }
-        ]
+              outputPath: 'images',
+            },
+          },
+        ],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
@@ -42,26 +42,26 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'font'
-            }
-          }
-        ]
+              outputPath: 'font',
+            },
+          },
+        ],
       },
       {
-        test: /\.m?js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: [
           {
-            loader: 'babel-loader'
-          }
-        ]
-      }
-    ]
+            loader: 'babel-loader',
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html'
+      template: './public/index.html',
     }),
-    new CleanWebpackPlugin()
-  ]
+    new CleanWebpackPlugin(),
+  ],
 };

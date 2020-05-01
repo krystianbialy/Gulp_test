@@ -7,7 +7,7 @@ export const Footer = () => {
 
   return (
     <Container>
-      <FooterText>&copy; {year} Author</FooterText>
+      <FooterText>&copy; {year} Krystian Biały</FooterText>
     </Container>
   );
 };
